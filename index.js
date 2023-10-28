@@ -8,6 +8,7 @@ require('dotenv').config();
 const app = express();
 app.use(cors());
 app.use(express.json());
+mongoose.set('strictQuery', false);
 
 mongoose.connect(process.env.MONGODB_URI);
 
