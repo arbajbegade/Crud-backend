@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const UserModel = require("./models/Users");
+const PORT = process.env.PORT || 4000
 
 require('dotenv').config();
 const app = express();
@@ -48,6 +49,6 @@ app.post("/createUser", (req, res) => {
     .catch((err) => res.json(err));
 });
 
-app.listen(process.env.PORT, () => {
+app.listen(PORT, () => {
   console.log("Server is started on port 4000");
 });
